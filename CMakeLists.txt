@@ -1,5 +1,13 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.29.6)
 
-project(libyellow)
+project(yellow)
 
-add_executable(libyellow src/main.cpp)
+if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
+  message(
+    FATAL_ERROR
+      "build in your build directory idiot"
+  )
+endif()
+
+add_subdirectory(src)
+add_subdirectory(examples)
