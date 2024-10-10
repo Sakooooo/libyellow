@@ -18,8 +18,9 @@
       # });
 
       devShells = eachSystem (pkgs: {
-        default =
-          pkgs.mkShell { packages = attrValues { inherit (pkgs) meson; }; };
+        default = pkgs.mkShell {
+          packages = attrValues { inherit (pkgs) meson ninja; };
+        };
       });
 
     };
